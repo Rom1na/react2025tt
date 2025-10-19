@@ -1,0 +1,46 @@
+.wrapp{
+    
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  padding: 2vh 5vw;  
+
+  
+}
+
+.descripcion{
+    font-size: 0.75em;
+    text-align: center;
+    width: 75%;
+}
+
+.imagen{
+    width: 15vw
+}
+
+.precio{
+    font-size: larger;
+    font-weight: 600;
+}
+
+.btnCompra{
+   background-color: #007bff
+}
+ 
+
+
+ @media screen and (max-width: 600px) {
+
+        .wrapper{
+            
+            height: 55vh;
+
+        }
+ 
+        .imagen{
+             width: 25vw
+         }
+
+
+    }

@@ -1,0 +1,182 @@
+
+.carrito {
+  padding: 0 20px;
+  ;
+}
+
+.carrito-row {
+  border-bottom: 1px solid #ccc;
+}
+
+.carrito-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 0;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.carrito-img {
+  max-width: 4%;
+  height: auto;
+  object-fit: cover;
+  padding-right: 15px;
+}
+
+.carrito-nombre {
+  flex: 2;
+}
+
+.carrito-precio{
+    font-weight: bold;
+    color: #85BB65;
+    text-shadow: rgb(110, 98, 98) 1px 0 10px;
+}
+
+
+.carrito-precio,
+.carrito-cantidad,
+.carrito-total {
+  flex: 1;
+}
+
+.carrito-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.carrito-cantidad button {
+  padding: 4px 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.carrito-eliminar {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+
+.carrito-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 80px;
+}
+
+.carrito-footer-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.carrito-total-general {
+  font-size: 18px;
+  font-weight: bold;
+  color:  #85BB65;
+  text-shadow: rgb(110, 98, 98) 1px 0 10px;
+  
+}
+
+.carrito-footer-buttons button {
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  background-color:  #85BB65;
+  color: white;
+  border-radius: 4px;  
+  
+}
+
+.carrito-footer-buttons button:last-child {
+  background-color: #dc3545;
+}
+
+.carrito-footer-buttons button:last-child {
+  background-color: #dc3545;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+  .carrito {
+    padding: 0 30px;
+  }
+
+  .carrito-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 0;
+  }
+
+  .carrito-eliminar {
+    margin-top: 10px;
+    align-self: flex-end;
+  }
+
+ .carrito-img {
+  max-width: 45%;
+  display: block;
+  margin: 0 auto 10px auto;
+ 
+}
+
+.carrito-footer {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 80px;
+    
+  }
+
+  .carrito-footer-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .carrito-footer-buttons button {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

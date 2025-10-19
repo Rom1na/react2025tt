@@ -1,0 +1,23 @@
+.contenedor{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+ /*  height: 100vh;  *//* Opcional: ocupa toda la altura de la pantalla */
+  gap: 2em;
+  margin-bottom: 80px;
+ 
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+       .contenedor{
+          margin-bottom: 80px;
+        
+        
+       }
+
+
+  }

@@ -1,0 +1,51 @@
+:root{
+   width: 100%; 
+}
+
+.img{
+    width:75px;
+      
+    
+}
+
+
+.wra{
+  display: flex;
+  flex-direction: column;  
+  padding: 25px;
+  align-items: center; 
+  justify-content: center; 
+  
+  
+}
+.contenedorInicio{
+  display: flex;
+  gap: 15px;
+}
+.textoIntro{
+  padding-bottom: 25px;
+ 
+} 
+.Titu{
+  font-size: larger;
+  font-weight: 800;
+ 
+}
+
+.LL{
+  color: white;
+  padding-top: 12px;
+}
+
+
+@media screen and (max-width: 600px) {
+   .textoIntro{
+    width: 90%;  
+    text-align: center;
+   }
+
+   .Titu{
+    text-align: center;
+   }
+
+}

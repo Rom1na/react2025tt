@@ -1,0 +1,15 @@
+.sm-footer{
+       bottom: 0;
+       width: 100vw;
+       height:2.1em;
+       display:flex;
+       justify-Content: space-evenly;
+       font-size: "1.3rem";
+       position:fixed;
+       align-Items:center;
+       background-Color:black;
+}
+
+i{
+    color: white;
+}
