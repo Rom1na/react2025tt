@@ -1,6 +1,6 @@
 import React from 'react'
 import'./Nosotros.css'
-import shop from'../assets/shop400X276.jpg'
+import shop from'../assets/shop400x276.jpg'
 
 const Nosotros = () => {
   return (
