@@ -14,7 +14,7 @@ const navigate= useNavigate();
 console.log(producto)
 
 useEffect(() => {
-  if (auth && syncEnabled && compra.length > 0) {
+  if (auth && syncEnabled) {
         saveDataToLocalStorage(compra, user);
       }
 
