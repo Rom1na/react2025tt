@@ -7,17 +7,18 @@ const DetalleProducto = () => {
 
 const location = useLocation();
 const producto = location.state.prod;
-const{setCompra,compra,auth,user,saveDataToLocalStorage,syncEnabled, setSyncEnabled}= useContext(CarritoContext);
+const{setCompra,compra,auth,user,saveDataToLocalStorage,syncEnabled,setSyncEnabled }= useContext(CarritoContext);
 const navigate= useNavigate();
 
 
 console.log(producto)
 
 useEffect(() => {
-  if (auth && compra.lengh >0 ) {
-    saveDataToLocalStorage(compra, user);
-  }
-}, [compra, auth]);
+  if (auth && syncEnabled && compra.length > 0) {
+        saveDataToLocalStorage(compra, user);
+      }
+
+}, [compra, auth,syncEnabled]);
 
 
 
@@ -38,7 +39,7 @@ const handleAgregar = (producto) => {
     });
 
     alert(`${producto.title} agregado a tu compra.`);
-    setSyncEnabled(true);
+    
     navigate('/carrito');
   } else {
     alert('Por favor, ingresa para habilitar tu carrito');
