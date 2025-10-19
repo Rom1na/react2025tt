@@ -1,3 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+
+
 .wrapp{
     
   display: flex;
@@ -5,7 +14,8 @@
   align-items:center;
   justify-content: center;
   padding: 2vh 5vw;  
-
+   max-width: 100vw;
+  overflow-x: hidden;
   
 }
 
@@ -25,22 +35,49 @@
 }
 
 .btnCompra{
-   background-color: #007bff
+   background-color: #007bff;
+   margin-bottom: 2rem;
 }
  
 
 
  @media screen and (max-width: 600px) {
 
-        .wrapper{
-            
-            height: 55vh;
+        
+            .wrapp {
+                padding: 4vh 3vw;
+            }
 
-        }
- 
-        .imagen{
-             width: 25vw
-         }
+            .descripcion {
+                font-size: 0.9em;
+                width: 90%;
+            }
+
+            .imagen {
+                width: 50vw;
+            }
+
+            .precio {
+                font-size: 1em;
+            }
+
+            .btnCompra {
+                width: 80%;
+                font-size: 1em;
+            }
+}
 
 
+
+
+@media screen and (max-width: 900px) {
+    .imagen {
+        width: 30vw;
     }
+
+    .descripcion {
+        width: 85%;
+    }
+    }
+
+    
