@@ -7,7 +7,7 @@ const DetalleProducto = () => {
 
 const location = useLocation();
 const producto = location.state.prod;
-const{setCompra,compra,auth,user,saveDataToLocalStorage}= useContext(CarritoContext);
+const{setCompra,compra,auth,user,saveDataToLocalStorage,syncEnabled, setSyncEnabled}= useContext(CarritoContext);
 const navigate= useNavigate();
 
 
@@ -38,6 +38,7 @@ const handleAgregar = (producto) => {
     });
 
     alert(`${producto.title} agregado a tu compra.`);
+    setSyncEnabled(true);
     navigate('/carrito');
   } else {
     alert('Por favor, ingresa para habilitar tu carrito');
