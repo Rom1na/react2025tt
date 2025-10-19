@@ -43,7 +43,7 @@ const Carrito = () => {
 
 
 
-    }, [compra, auth]);
+    }, [compra, auth,syncEnabled]);
     
     
     
