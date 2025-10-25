@@ -11,7 +11,7 @@ const CategoriaLink = ({ url, categoria}) => {
     });
   };
 
-  return <p onClick={handleClick}>{categoria}</p>;
+  return <p className="submenu-link" onClick={handleClick}>{categoria}</p>;
 };
 
 export default CategoriaLink;

@@ -23,11 +23,15 @@ const DropDown2 = () => {
             </svg>
           </a>
           <div className="submenu">
+            <div className="submenu-link">
             <div className="submenu-item" style={{margin:"5px"}}>
                <Link to ='/formulario'>LogIn</Link>    
             </div>
+            </div>
+            <div className="submenu-link">
             <div className="submenu-item" style={{margin:"5px"}}>
                <Link to ='/carrito'>Tu Carrito</Link>    
+            </div>
             </div>
              <div className="submenu-item" style={{margin:"5px"}}>
               <p className='logout' onClick={logOut} >LogOut</p>
