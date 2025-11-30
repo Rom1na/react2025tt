@@ -12,7 +12,7 @@ const Carrito = () => {
     
     
     useEffect(() => {
-        const dataJson = localStorage.getItem(user);
+        const dataJson = localStorage.getItem(user.user);
         setSyncEnabled(true)
         if (dataJson) {
           try {
@@ -38,7 +38,7 @@ const Carrito = () => {
       }
 
       if (compra.length === 0){
-      localStorage.removeItem(user)
+      localStorage.removeItem(user.user)
       }
 
 
@@ -74,7 +74,7 @@ const Carrito = () => {
     
     setCompra([]);
     console.log(compra);
-    localStorage.removeItem(user)
+    localStorage.removeItem(user.user)
     
   };
 
@@ -88,7 +88,7 @@ const Carrito = () => {
          if (compra && compra.length > 0) {
             alert('¡Compra confirmada!');
             setCompra([]);
-            localStorage.removeItem(user)
+            localStorage.removeItem(user.user)
 
           } else {
             alert('No hay productos en tu carrito...');

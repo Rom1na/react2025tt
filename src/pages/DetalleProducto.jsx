@@ -7,24 +7,24 @@ const DetalleProducto = () => {
 
 const location = useLocation();
 const producto = location.state.prod;
-const{setCompra,compra,auth,user,saveDataToLocalStorage,syncEnabled,setSyncEnabled }= useContext(CarritoContext);
+const{setCompra,compra,user,saveDataToLocalStorage,syncEnabled,setSyncEnabled }= useContext(CarritoContext);
 const navigate= useNavigate();
 
 
 console.log(producto)
 
 useEffect(() => {
-  if (auth && syncEnabled) {
+  if (user.auth && syncEnabled) {
         saveDataToLocalStorage(compra, user);
       }
 
-}, [compra, auth,syncEnabled]);
+}, [compra,syncEnabled]);
 
 
 
 
 const handleAgregar = (producto) => {
-  if (auth) {
+  if (user.auth) {
     setCompra(prev => {
       const existe = prev.find(item => item.id === producto.id);
       if (existe) {

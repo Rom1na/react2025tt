@@ -19,7 +19,7 @@ const Inicio = ({url}) => {
       
       
      {user ?(
-            <p className='Titu'>Hola {user}, estas en la tienda virtual</p>
+            <p className='Titu'>Hola {user.user}, estas en la tienda virtual</p>
                  
     
       ):(
@@ -37,7 +37,7 @@ const Inicio = ({url}) => {
      <DropDown url={url}/>
 
 
-     {user && <Link to ='/carrito' className='LL'> O  visita tu Carrito</Link>}
+     {!user.admin && <Link to ='/carrito' className='LL'> O  visita tu Carrito</Link>}
    
    
     </div>

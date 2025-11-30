@@ -9,7 +9,8 @@ import'./DropDown.css'
 
 const DropDown2 = () => {
   
-  const{user,btn,logOut,compra}= useContext(CarritoContext);
+  const{user,btn,logOut,compra,auth}= useContext(CarritoContext);
+  
 
   return (
   <div className="menu">
@@ -23,20 +24,29 @@ const DropDown2 = () => {
             </svg>
           </a>
           <div className="submenu">
+           {!user.auth&&
             <div className="submenu-link">
             <div className="submenu-item" style={{margin:"5px"}}>
                <Link to ='/formulario'>LogIn</Link>    
             </div>
-            </div>
-            <div className="submenu-link">
+            </div>}
+            {!user.admin &&<div className="submenu-link">
             <div className="submenu-item" style={{margin:"5px"}}>
                <Link to ='/carrito'>Tu Carrito</Link>    
             </div>
+            </div>}
+            {user.admin&&
+            <div className="submenu-link">
+            <div className="submenu-item" style={{margin:"5px"}}>
+               <Link to ='/admin' style={{color: '#8BF527'}}>Panel Adm.</Link>    
             </div>
+            </div>  
+            }
+            {user.auth&&
              <div className="submenu-item" style={{margin:"5px"}}>
               <p className='logout' onClick={logOut} >LogOut</p>
             </div>
-           
+            }
 
   
           </div>

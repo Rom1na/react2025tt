@@ -11,11 +11,14 @@ const Formulario = () => {
 
      function manejarEnvio(e){
         e.preventDefault();
-        console.log(compra)
+        console.log(user)
          
-       if (user!= undefined){ 
-        setAuth(true);
-        setBtn(`Hola ${user}🔒`);
+       if (user.user!= undefined){ 
+         setUser({...user,auth: true});
+        if (user.user === import.meta.env.VITE_ad){
+            setUser({...user,auth: true,admin: true});
+         }
+        setBtn(`Hola ${user.user}🔒`);
         setCompra([]);
         navigate('/');
         }else{
@@ -25,6 +28,11 @@ const Formulario = () => {
         
      };
 
+      const handleChange = (e) => {
+         const { name, value } = e.target;
+         setUser((prev) => ({ ...prev, [name]: value }));
+         console.log(user)
+      };    
 
 
   return (
@@ -33,13 +41,22 @@ const Formulario = () => {
        <div className='Cont-gral'>
 
        
-        <div className='cabecera'>Ingresa tu nombre para habilitar el carrito</div>
+        <div className='cabecera'>Ingresa tus datos para habilitar el carrito</div>
         <form onSubmit={manejarEnvio}>
 
             <input type="text"
-                   value={user || ''}
-                   onChange={(e) =>setUser(e.target.value)}
+                   name="user"
+                   value={user.user || ''}
+                   onChange={handleChange}
                    placeholder='Ingresa tu nombre'
+            
+            />
+
+            <input type="email"
+                   name="email"          
+                   value={user.email || ''}
+                   onChange={handleChange}
+                   placeholder='Ingresa tu e-mail'
             
             />
 

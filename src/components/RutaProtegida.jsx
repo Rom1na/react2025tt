@@ -5,10 +5,10 @@ import { CarritoContext} from "./carritoContext";
 
 function RutaProtegida({children}){
 
-    const{auth}= useContext(CarritoContext);
+    const{user}= useContext(CarritoContext);
     
 
-    if(!auth){
+    if(!user.auth){
         return <Navigate to="/formulario" replace/>;
     }
 

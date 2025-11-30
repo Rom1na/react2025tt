@@ -1,24 +1,114 @@
-import { createContext,useActionState, useState } from "react";
+import { createContext,useActionState, useState,useEffect } from "react";
+
 
 export const CarritoContext = createContext();
 export const CarritoProvider = ({children}) =>{
         const [compra,setCompra] = useState([]);
-        const [auth, setAuth] = useState(false);
-        const [user, setUser] = useState();
+        
+                // auth persistido
+       
+
+        // user persistido
+        const [user, setUser] = useState(() => {
+            const savedUser = localStorage.getItem("user");
+            return savedUser ? JSON.parse(savedUser) : { 
+                user: "",
+                email: "",
+                auth : false,
+                admin: false };
+        });
+
+      
+        // sincronizar user
+        useEffect(() => {
+            if (user && user.email) {
+            localStorage.setItem("user", JSON.stringify(user));
+            } else {
+            localStorage.removeItem("user");
+            }
+        }, [user]);
+
+        
+                
+                 
         const [btn, setBtn] = useState('Ingresa!');
         const [syncEnabled, setSyncEnabled] = useState(true);
+        
 
+
+        
         
         function logOut(){
             
             setBtn('Ingresa!');
-            setAuth(false);
             setUser('');
+            setUser('');
+
+           /*  localStorage.removeItem("auth"); */
+            localStorage.removeItem("user");
             setSyncEnabled(false)
             
                         
             
         }
+
+
+        
+
+
+
+
+
+
+
+        
+
+    //CRUD
+
+     const eliminarProducto = async (id) =>{
+
+     
+       const endpoint = import.meta.env.VITE_productos;
+       const url =`${endpoint}/${id}`;     
+       console.log(url)
+       
+
+            try{
+                const respuesta = await fetch(url,
+                   {method: 'DELETE'}
+                );
+                if(!respuesta.ok){
+                  throw new Error('Error al eliminar el producto');  
+                }
+
+                alert('Producto eliminado exitosamente.')
+                
+               
+            }catch (error){
+                console.error(error.message);
+                alert('Hubo un problema al elminar el producto.');
+
+            };
+
+       
+
+
+
+     } 
+
+
+
+     
+
+
+
+
+
+
+
+
+
+    //LOCALSTORAGE    
 
         const saveDataToLocalStorage = (compra,user) => {
             try {
@@ -26,7 +116,7 @@ export const CarritoProvider = ({children}) =>{
             const dataJson = JSON.stringify(compra);
 
             // Guarda la cadena JSON en el localStorage
-            localStorage.setItem(user, dataJson);
+            localStorage.setItem(user.user, dataJson);
 
             console.log('Datos guardados en el localStorage:', dataJson);
             } catch (error) {
@@ -39,7 +129,7 @@ export const CarritoProvider = ({children}) =>{
         const loadDataFromLocalStorage = (user) => {
         try {
             // Obtiene la cadena JSON del localStorage
-            const storedData = localStorage.getItem(user);
+            const storedData = localStorage.getItem(user.user);
 
             // Si existe la cadena JSON, la parsea a un objeto
             if (storedData) {
@@ -60,7 +150,7 @@ export const CarritoProvider = ({children}) =>{
         }
         }; 
 
-
+/* 
         const getUser = (key)=>{
         try {
             // Intenta obtener el item del localStorage
@@ -86,7 +176,7 @@ export const CarritoProvider = ({children}) =>{
             const u = getUser ('usuario');
             setUser(u); 
 
-        }
+        } */
  
 
 
@@ -112,13 +202,13 @@ export const CarritoProvider = ({children}) =>{
     return(
         <CarritoContext.Provider value={{
             compra,setCompra,
-            auth,setAuth,
             user,setUser,
             btn,setBtn,
             logOut,
             syncEnabled,setSyncEnabled,
             saveDataToLocalStorage,
             loadDataFromLocalStorage,
+            eliminarProducto,
 
             }}>
             {children}

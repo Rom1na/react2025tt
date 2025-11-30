@@ -81,6 +81,7 @@
 
   .boton-link {
   padding: 10px 20px;
+  margin: 5px;
   background-color: #007bff;
   color: white;
   border: none;
@@ -89,7 +90,28 @@
   display: inline-block;
   cursor: pointer;
 }
-
+.boton-link--rojo{
+  background-color: crimson;
+  padding: 10px 20px;
+  margin: 5px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+.boton-link--verde{
+  background-color: seagreen;
+  padding: 10px 20px;
+  margin: 5px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
 
   @media screen and (max-width: 600px) {
 
