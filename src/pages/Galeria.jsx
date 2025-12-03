@@ -16,10 +16,21 @@ const Galeria = () => {
 
     
     <>
+    
 
     <h3 style={{textAlign:'center'}}>{categoria}</h3>
     <div className='contenedor' >
       
+
+       {categoria === "Sin categoría" && (
+             <p>Elegi una categoria en el Catálogo</p>
+        
+      
+      )}
+
+
+
+
      {productos?.map((prod) => (
             <ProdCard
               key={prod.id} // Asegurate de tener una key única

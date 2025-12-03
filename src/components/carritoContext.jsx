@@ -4,6 +4,7 @@ import { createContext,useActionState, useState,useEffect } from "react";
 export const CarritoContext = createContext();
 export const CarritoProvider = ({children}) =>{
         const [compra,setCompra] = useState([]);
+        const [btn, setBtn] = useState('Ingresa!');
         
                 // auth persistido
        
@@ -11,6 +12,10 @@ export const CarritoProvider = ({children}) =>{
         // user persistido
         const [user, setUser] = useState(() => {
             const savedUser = localStorage.getItem("user");
+            const u = JSON.parse(savedUser)
+            if(u != null){
+            setBtn(`Hola ${u.user}🔒`);
+              }
             return savedUser ? JSON.parse(savedUser) : { 
                 user: "",
                 email: "",
@@ -26,12 +31,14 @@ export const CarritoProvider = ({children}) =>{
             } else {
             localStorage.removeItem("user");
             }
+
+            console.log(`Estado: ${user.user},${user.auth},${user.admin},${btn}`)
         }, [user]);
 
         
                 
                  
-        const [btn, setBtn] = useState('Ingresa!');
+     
         const [syncEnabled, setSyncEnabled] = useState(true);
         
 

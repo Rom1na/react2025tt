@@ -7,7 +7,7 @@ import'./Carrito.css'
 const Carrito = () => {
 
     
-    const{compra,setCompra,saveDataToLocalStorage,user,auth,syncEnabled,setSyncEnabled }= useContext(CarritoContext);
+    const{compra,setCompra,saveDataToLocalStorage,user,syncEnabled,setSyncEnabled }= useContext(CarritoContext);
     
     
     
@@ -33,7 +33,7 @@ const Carrito = () => {
     
     useEffect(() => {
       
-      if (auth && syncEnabled && compra.length > 0) {
+      if (syncEnabled && compra.length > 0) {
         saveDataToLocalStorage(compra, user);
       }
 
@@ -43,7 +43,7 @@ const Carrito = () => {
 
 
 
-    }, [compra, auth,syncEnabled]);
+    }, [compra,syncEnabled]);
     
     
     
