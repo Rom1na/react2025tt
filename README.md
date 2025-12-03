@@ -4,15 +4,15 @@
 
 Este repositorio aloja el trabajo práctico del curso de React de Talento Tech 2025
 La consigna es hacer una estructura que emule un comercio electrónico.
-En mi caso elegí utilizar la api pública fake api store  para  los productos.
-~[FAKE API STORE](https://fakestoreapi.com/) ~
+~En mi caso elegí utilizar la api pública fake api store  para  los productos.~
+[FAKE API STORE](https://fakestoreapi.com/) 
 En la entrega final se agregaron las funciones CRUD  restantes a Leer, por lo que migré los productos de la Api pública usando MockApi.
-Se utilizaron variables de entorno para no exponer datos sensibles (endpoints, palabras claves)
--Se agregó al login persistencia en Localstorage 
--Se agregó el panel de administración al cual sólo accede un usuario administrador.
--Se reutilizaron componentes para las versiones de Admin  en Alta y modificación
--Se mejoró la funcionalidad del contexto.
--Se agregaron Formularios controlados para el alta y modificación de productos.
+- Se utilizaron variables de entorno para no exponer datos sensibles (endpoints, palabras claves)
+-  Se agregó al login persistencia en Localstorage 
+- Se agregó el panel de administración al cual sólo accede un usuario administrador.
+- Se reutilizaron componentes para las versiones de Admin  en Alta y modificación
+- Se mejoró la funcionalidad del contexto.
+- Se agregaron Formularios controlados para el alta y modificación de productos.
 
 
 
